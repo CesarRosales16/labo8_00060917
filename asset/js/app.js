@@ -111,8 +111,8 @@ function validado() {
         }
         return false;
     }
-    formulario[1].style.border = "solid 2px gray";
-    formulario[2].style.border = "solid 2px gray";
-    formulario[3].style.border = "solid 2px gray";
+    formulario[1].style.border = "solid 1px gray";
+    formulario[2].style.border = "solid 1px gray";
+    formulario[3].style.border = "solid 1px gray";
     return true;
 }

@@ -39,9 +39,11 @@ formulario.addEventListener("submit", (evt) => {
         descripcion: formulario[2].value,
         cantidad: formulario[3].value
     }
-    bitacoras.push(bitacora);
-    cont++;
-    mostrar();
+    if (validado()) {
+        bitacoras.push(bitacora);
+        cont++;
+        mostrar();
+    }
 });
 //5
 const crearElemento = (bitacora, tbody) => {
@@ -81,6 +83,36 @@ const mostrar = () => {
         crearElemento(item, document.querySelector(".tabla-btc tbody"));
     });
     agregar();
-} 
+}
 
 //VALIDACION
+function validado() {
+    var x = formulario[1].value;
+    var y = formulario[2].value;
+    var z = formulario[3].value;
+    if (x == "" || y == "" || z == "") {
+        if(x==""){
+            formulario[1].style.border = "solid 2px red";
+        }
+        if(x!=""){
+            formulario[1].style.border = "solid 2px green";
+        }
+        if(y==""){
+            formulario[2].style.border = "solid 2px red";
+        }
+        if(y!=""){
+            formulario[2].style.border = "solid 2px green";
+        }
+        if(z==""){
+            formulario[3].style.border = "solid 2px red";
+        }
+        if(z!=""){
+            formulario[3].style.border = "solid 2px green";
+        }
+        return false;
+    }
+    formulario[1].style.border = "solid 2px gray";
+    formulario[2].style.border = "solid 2px gray";
+    formulario[3].style.border = "solid 2px gray";
+    return true;
+}
